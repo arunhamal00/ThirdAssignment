@@ -1,0 +1,76 @@
+@page "/Grades"
+@model Vidhyalaya.Pages_Grade.IndexModel
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <p>
+        <a asp-page="Create" class="btn btn-success"><i class="bi bi-file-plus"></i> Create</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Grade[0].Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Grade[0].C_Teacher)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Grade[0].Medium)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Grade[0].Subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Grade[0].S_Year)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Grade)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.C_Teacher)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Medium)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.S_Year)
+
+                    </td>
+                    <td>
+                    <td>
+                        <a href="/Grade/Edit" class="btn btn-primary"><i class="bi bi-pencil-square"></i>Edit</a>
+                        <a href="/Grade/Details" class="btn btn-primary"><i class="bi bi-eye-fill"></i>Details</a>
+                        <a href="/Grade/Delete " class="btn btn-primary btn btn-danger "><i class="bi bi-trash-fill">delete</i>
+                        </a>
+                    </td>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>
